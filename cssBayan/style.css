@@ -1,0 +1,134 @@
+body {
+    background: #393939;
+    height: 150vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    color: rgb(226, 226, 226);
+    text-align: center;
+}
+
+.accordion-input,
+.accordion-input-inner {
+    display: none;
+}
+
+.accordion-title {
+    color: blue;
+}
+
+/* set cursor pointer */
+label,
+.accordion {
+    cursor: pointer;
+}
+
+/* accordion body styles */
+.accordion {
+    width: 100%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.accordion-title {
+    font-size: 1em;
+    padding: 0.5em;
+    border-bottom: 0.125em solid #fff;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.5s ease;
+}
+
+.accordion-icon {
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+
+.accordion__content {
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    max-height: 0;
+    box-sizing: border-box;
+    transition: 0.5s ease;
+}
+
+.accordion__content img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* accordion click */
+
+.accordion-input:checked+.accordion-title {
+    color: #fff;
+}
+
+.accordion-input:checked+.accordion-title+.accordion-input-inner+.accordion-title-inner>.accordion__content,
+.accordion-input-inner:checked+.accordion-title-inner>.accordion__content {
+    padding: 1.2em;
+    visibility: visible;
+    max-height: initial;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.accordion-input:checked+.accordion-title>i.accordion-icon {
+    transform: rotate(45deg) !important;
+}
+
+@media (min-width:426px) {
+    .accordion-title {
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width:769px) {
+    .accordion {
+        width: 70%;
+    }
+
+    .accordion-icon {
+        opacity: 0;
+    }
+
+    /* accordion hover */
+
+    .accordion-title {
+        color: blue;
+        font-size: 1.5em;
+    }
+
+    .accordion:hover .accordion-icon {
+        opacity: 1;
+    }
+
+    .accordion:hover .accordion-title {
+        color: #fff;
+    }
+
+    .accordion-container {
+        transition: 0.5s ease;
+    }
+
+    .accordion-container:hover .accordion__content {
+        padding: 1.2em;
+        visibility: visible;
+        max-height: initial;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .accordion-container:hover .accordion-icon {
+        transform: rotate(45deg);
+    }
+
+    .accordion__content img {
+        height: 50vh;
+    }
+
+}
