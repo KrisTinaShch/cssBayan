@@ -58,6 +58,17 @@ label {
     color: #fff;
 }
 
+.accordion-container {
+    transition: 0.5s ease;
+}
+
+.accordion-container:hover>.accordion__content {
+    padding: 20px;
+    visibility: visible;
+    max-height: initial;
+    opacity: 1;
+}
+
 /* accordion click */
 
 .accordion-title {
