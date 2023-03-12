@@ -1,5 +1,6 @@
 body {
     background: rgb(202, 90, 90);
+    height: 150vh;
 }
 
 label {
@@ -18,7 +19,6 @@ label {
     transition: 0.5s all;
     opacity: 0;
 }
-
 
 .accordion-title {
     display: flex;
@@ -40,11 +40,13 @@ label {
 }
 
 .accordion__content img {
+    display: block;
     max-width: 100%;
     margin: 0 auto;
 }
 
-.accordion-input {
+.accordion-input,
+.accordion-input-inner {
     display: none;
 }
 
@@ -62,11 +64,15 @@ label {
     transition: 0.5s ease;
 }
 
-.accordion-container:hover>.accordion__content {
+.accordion-container:hover .accordion__content {
     padding: 20px;
     visibility: visible;
     max-height: initial;
     opacity: 1;
+}
+
+.accordion-container:hover .accordion-icon {
+    transform: rotate(45deg);
 }
 
 /* accordion click */
@@ -80,7 +86,8 @@ label {
     color: #fff;
 }
 
-.accordion-input:checked+.accordion-title+.accordion__content {
+.accordion-input:checked+.accordion-title+.accordion-input-inner+.accordion-title>.accordion__content,
+.accordion-input-inner:checked+.accordion-title>.accordion__content {
     padding: 20px;
     visibility: visible;
     max-height: initial;
