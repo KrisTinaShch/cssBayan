@@ -25,6 +25,7 @@ body {
     box-sizing: border-box;
     width: 100%;
     transition: 0.5s all;
+    visibility: hidden;
     opacity: 0;
     max-height: 0;
     font-size: 15px;
@@ -41,8 +42,9 @@ body {
 
 .accordion-input:checked+.accordion-title+.accordion__content {
     padding: 20px;
-    opacity: 1;
+    visibility: visible;
     max-height: initial;
+    opacity: 1;
 }
 
 .accordion-input:checked+.accordion-title>.accordion-icon {
