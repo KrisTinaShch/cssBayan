@@ -2,15 +2,23 @@ body {
     background: rgb(202, 90, 90);
 }
 
+label {
+    cursor: pointer;
+}
+
 .accordion {
     width: 70%;
     margin: 0 auto;
     color: #fff;
+    cursor: pointer;
 }
 
 .accordion-icon {
+    color: #fff;
     transition: 0.5s all;
+    opacity: 0;
 }
+
 
 .accordion-title {
     display: flex;
@@ -38,6 +46,27 @@ body {
 
 .accordion-input {
     display: none;
+}
+
+/* accordion hover */
+
+.accordion:hover .accordion-icon {
+    opacity: 1;
+}
+
+.accordion:hover .accordion-title {
+    color: #fff;
+}
+
+/* accordion click */
+
+.accordion-title {
+    color: blue;
+}
+
+
+.accordion-input:checked+.accordion-title {
+    color: #fff;
 }
 
 .accordion-input:checked+.accordion-title+.accordion__content {
